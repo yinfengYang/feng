@@ -38,7 +38,7 @@ public class ITDragonShiroRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        log.info("^^^^^^^^^^^^^^^^^^^^ ITYao 配置当前用户权限");
+        log.info("^^^^^^^^^^^^^^^^^^^^ 配置当前用户权限");
         String username = (String) principals.getPrimaryPrincipal();
         User user = userService.findUserByUserName(username);
         if (null == user) {
@@ -64,7 +64,7 @@ public class ITDragonShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
             throws AuthenticationException {
-        log.info("^^^^^^^^^^^^^^^^^^^^ ITYao 认证用户身份信息");
+        log.info("^^^^^^^^^^^^^^^^^^^^ 认证用户身份信息");
         // 获取用户登录账号
         String username = (String) token.getPrincipal();
         // 通过账号查加密后的密码和盐，这里一般从缓存读取

@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * 菜单基础类
  *
- * @author jiarui
+ * @author yang
  */
 public class Menu implements Serializable {
 
@@ -21,7 +21,7 @@ public class Menu implements Serializable {
     private String menuURL;            //菜单URL
     private boolean available;        //菜单是否可用
     private String menuDesc;        //菜单描述
-    private String menuMark;
+    private String menuMark;       //菜单标记
 
     public String getMenuId() {
         return menuId;

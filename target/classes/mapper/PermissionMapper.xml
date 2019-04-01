@@ -2,13 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yyf.mapper.PermissionMapper">
     <select id="getMenuInfoByUserId" resultType="com.yyf.entity.Menu">
-		select p.PermissionID as menuId,p.PermissionName as menuName,p.URL as menuURL,p.ParentID as perentMenuId,
-		p.Available as available,p.Description as menuDesc,p.PermissionMark as menuMark,p.PermissionType,p.Priority,
-		p.CreateTime,p.LastTime from gm_role_permission,gm_user_role,gm_permission p
-		LEFT JOIN gm_permission pa on p.parentId = pa.PermissionID
+		select p.PermissionID as menuId,
+			   p.PermissionName as menuName,
+			   p.URL as menuURL,
+			   p.ParentID as perentMenuId,
+			   p.Available as available,
+			   p.Description as menuDesc,
+			   p.PermissionMark as menuMark,
+			   p.PermissionType,
+			   p.Priority,
+			   p.CreateTime,
+			   p.LastTime
+
+			   from gm_role_permission,
+			   		gm_user_role,
+			   		gm_permission p
+			   LEFT JOIN gm_permission pa on p.parentId = pa.PermissionID
 		WHERE
-		p.PermissionType='menu' and p.Available=1 and p.PermissionMark not like '%Mobile%'
-		and gm_role_permission.permissionId=p.permissionId and gm_role_permission.roleId=gm_user_role.roleId and gm_user_role.userId=#{userId}
+			  p.PermissionType='menu'
+			  and p.Available=1
+			  and p.PermissionMark
+			  not like '%Mobile%'
+			  and gm_role_permission.permissionId=p.permissionId
+			  and gm_role_permission.roleId=gm_user_role.roleId
+			  and gm_user_role.userId=#{userId}
 		ORDER BY p.CreateTime
 	</select>
 

@@ -19,12 +19,12 @@ layui.use(['form', 'jquery', "layer"], function () {
         $("#userFace").attr("src", window.sessionStorage.getItem('userFace'));
         $(".userAvatar").attr("src", $(".userAvatar").attr("src").split("images/")[0] + "images/" + window.sessionStorage.getItem('userFace').split("images/")[1]);
     } else {
-        $("#userFace").attr("src", "../../images/face.jpg");
+        $("#userFace").attr("src", "../../images/logo.jpg");
     }
 
     //公告层
     function showNotice() {
-        /*        layer.open({
+                layer.open({
                     type: 1,
                     title: "系统公告",
                     area: ['250px','170px'],
@@ -32,7 +32,7 @@ layui.use(['form', 'jquery', "layer"], function () {
                     id: 'LAY_layuipro',
                     btn: ['确定'],
                     moveType: 1,
-                    content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p class="layui-red">欢迎进入兆盛中介系统</div>',
+                    content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p class="layui-red">欢迎进入签到系统</div>',
                     success: function(layero){
                         var btn = layero.find('.layui-layer-btn');
                         btn.css('text-align', 'center');
@@ -44,7 +44,6 @@ layui.use(['form', 'jquery', "layer"], function () {
                         tipsShow();
                     }
                 });
-        */
     }
 
     function tipsShow() {
@@ -67,8 +66,8 @@ layui.use(['form', 'jquery', "layer"], function () {
             title: false,
             type: 1,
             content: '<div class="admin-header-lock" id="lock-box">' +
-                '<div class="admin-header-lock-img"><img src="/image/face.jpg" class="userAvatar"/></div>' +
-                '<div class="admin-header-lock-name" id="lockUserName">兆盛地产</div>' +
+                '<div class="admin-header-lock-img"><img src="/image/logo.jpg" class="userAvatar"/></div>' +
+                '<div class="admin-header-lock-name" id="lockUserName">杨银锋</div>' +
                 '<div class="input_btn">' +
                 '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />' +
                 '<button class="layui-btn" id="unlock">解锁</button>' +

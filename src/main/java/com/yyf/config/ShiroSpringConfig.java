@@ -72,6 +72,7 @@ public class ShiroSpringConfig {
         filterChainDefinitionMap.put("/reg", "anon");
         //登录界面
         filterChainDefinitionMap.put("/login", "anon");
+        /*filterChainDefinitionMap.put("/registerWbe", "anon");*/
         //注册匿名访问
         filterChainDefinitionMap.put("/user/userRegister.do", "anon");
         //以下是根据需求放行的接口地址
@@ -84,6 +85,7 @@ public class ShiroSpringConfig {
         filterChainDefinitionMap.put("/home/productList.do", "anon");
         filterChainDefinitionMap.put("/home/product.do", "anon");
         filterChainDefinitionMap.put("/product/productAjax.do", "anon");
+
 
         // 用户退出，只需配置logout即可实现该功能
         filterChainDefinitionMap.put("/logout.do", "logout");

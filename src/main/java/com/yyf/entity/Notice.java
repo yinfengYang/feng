@@ -8,9 +8,9 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 股票实体类
  *
- * @author itdragon
+ *
+ * @author yang
  */
 @Data
 @TableName("gm_notice")

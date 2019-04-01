@@ -59,10 +59,6 @@ public class LoginController {
                 return Result.resuleError("用户不存在");
             }
             if (user.getStatus() == 1) {
-                /**
-                 *  currentUser.isAuthenticated() 返回一个true值或false值,但是不知道为啥返回false，
-                 *  网上查了蛮多资料也还是不明白，目前只能将就的用
-                 */
                 if (!currentUser.isAuthenticated()) {
                     log.info("^^^^^^^^^^^^^^^^^^^^执行登录操作");
                     UsernamePasswordToken token = new UsernamePasswordToken(userName, password);

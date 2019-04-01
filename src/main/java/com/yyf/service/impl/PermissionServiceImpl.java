@@ -169,7 +169,7 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public Map<String, LinkedHashMap<String, List<Menu>>> getMenuInfoByUserId(String userId) {
-        log.debug("allMenu111" + userId);
+        log.debug("allMenu" + userId);
         if ("".equals(userId) && userId == null) {
             return new HashMap<String, LinkedHashMap<String, List<Menu>>>();
         }

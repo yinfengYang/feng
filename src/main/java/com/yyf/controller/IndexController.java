@@ -72,6 +72,9 @@ public class IndexController {
             }
             allMenu.put(key, sysJson);
         }
+        /**
+         * 设置属性方法到request域里面，前端有el表达式来接收数据
+         */
         model.addAttribute("menuInfo", allMenu);
         model.addAttribute("subSysInfo", sysList);
         User userByUserName = userService.findUserByUserName(user.getUserName());
@@ -105,25 +108,6 @@ public class IndexController {
 
     }
     /**
-     * 注册页面
-     *
-     * @param mv
-     * @return
-     */
-    @RequestMapping("/registerWbe")
-    public ModelAndView register(ModelAndView mv) {
-        Subject currentUser = SecurityUtils.getSubject();
-        if (currentUser.isAuthenticated()) {
-            mv.setViewName("/content/index");
-            return mv;
-        } else {
-            mv.setViewName("/reg");
-            return mv;
-        }
-
-    }
-
-    /**
      * Shiro登录跳转地址,重定向到登录页面
      *
      * @param mv
@@ -131,11 +115,8 @@ public class IndexController {
      */
     @RequestMapping("/loginShiro")
     public String loginShiro(ModelAndView mv,@RequestParam(defaultValue = "0") int reg) {
-        if(reg == 1){
-            return "forward:/registerWbe";
-        }else{
+
         return "forward:/loginWbe";
-        }
     }
 
     /**
@@ -284,7 +265,7 @@ public class IndexController {
      */
     @RequestMapping("/login")
     public ModelAndView login1(ModelAndView mv) {
-        mv.setViewName("login");
+        mv.setViewName("/login");
         return mv;
     }
 }
